@@ -14,6 +14,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace UMP1
 {
@@ -28,8 +31,15 @@ namespace UMP1
         /// </summary>
         public App()
         {
+            AppCenter.Start("b9cd2060-3c6f-4247-a4a0-f90acfe63140",
+                   typeof(Analytics), typeof(Crashes));
+
+            AppCenter.LogLevel = LogLevel.Verbose;
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            
         }
 
         /// <summary>

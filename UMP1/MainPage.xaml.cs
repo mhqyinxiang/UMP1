@@ -28,11 +28,10 @@ namespace UMP1
             this.InitializeComponent();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog messageDialog = new MessageDialog("内容");
-
-            await messageDialog.ShowAsync();
+            int i = 1;
+            int j = 3 / (i - 1);
         }
     }
 }
